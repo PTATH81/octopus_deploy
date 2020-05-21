@@ -6,7 +6,7 @@
 
 VAGRANTFILE_API_VERSION = '2'
 WORKERS = 1
-BOX_IMAGE = "mcree/win2019"
+IMAGE_TYPE = "mcree/win2019"
 PROVIDER_TYPE = 'virtualbox'
 SUBNET = '10.10.10'
 MEM = 1024
@@ -26,7 +26,7 @@ plugins_dependencies.each do |plugin_name|
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vbguest.auto_update = false
   #config.gatling.rsync_on_startup = true
-  config.vm.box = BOX_IMAGE
+  config.vm.box = IMAGE_TYPE
   config.vm.communicator = "winrm"
   config.vm.guest = "windows"
 
